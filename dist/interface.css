@@ -42,6 +42,22 @@
   color:var(--teal);
 }
 .report-points .icon {width:22px;height:22px;stroke-width:1.7}
+.annual-plan {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,2fr);
+  gap:clamp(1.25rem,4vw,4rem);
+  margin-top:clamp(2rem,4vw,3.5rem);
+  padding:clamp(1.25rem,3vw,2.5rem);
+  border-inline-start:3px solid var(--teal);
+  border-radius:0 12px 12px 0;
+  background:var(--inset);
+}
+.annual-plan h3 {margin:0;font-size:clamp(1.3rem,2.2vw,1.75rem);line-height:1.25;letter-spacing:-.03em}
+.annual-plan p {max-width:70ch;margin:0;color:var(--ink)}
+.annual-plan p+p {margin-top:.7em}
+@media (max-width:760px) {
+  .annual-plan {grid-template-columns:minmax(0,1fr);gap:.9rem}
+}
 @media (min-width:761px) {
   .service-grid:not(:has(details[open])) {grid-auto-rows:1fr}
 }
