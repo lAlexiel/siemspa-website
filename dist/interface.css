@@ -123,11 +123,8 @@ html[data-theme="dark"][data-campaign="summer"] .audience-section>.eyebrow {colo
 .faq .questions summary::after {right:18px;top:14px}
 .faq .questions details p {padding:0 20px 18px;margin:0;color:var(--muted)}
 .faq .questions details[open] {border-color:var(--teal)}
-.privacy-wrap {padding-bottom:25px}
-.privacy-wrap details {border-block:1px solid var(--line)}
-.privacy-wrap summary {max-width:72ch;min-height:44px}
-.privacy-copy {max-width:72ch;padding-bottom:20px}
-.privacy-copy h3 {font-size:17px;margin:18px 0 7px}
-.privacy-copy p {color:var(--muted);margin-bottom:10px}
-:is(.privacy,.privacy-copy,.btu-send-note) a {text-decoration:underline;text-underline-offset:3px}
+.footer-bottom {flex-wrap:wrap}
+.footer-legal {display:flex;flex-wrap:wrap;gap:0 1.25rem}
+.footer-legal a:hover,.footer-legal a:focus-visible {text-decoration:underline;text-underline-offset:3px}
+:is(.privacy,.btu-send-note) a {text-decoration:underline;text-underline-offset:3px}
 #quote-form[hidden] {display:none}
