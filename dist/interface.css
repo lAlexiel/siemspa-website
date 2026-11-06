@@ -30,6 +30,18 @@
   .menu-toggle {order:3;background:var(--surface)}
 }
 .service-grid {align-items:stretch}
+.report-points > div > i {
+  align-self:flex-start;
+  flex:none;
+  display:grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  background:var(--accent-surface);
+  color:var(--teal);
+}
+.report-points .icon {width:22px;height:22px;stroke-width:1.7}
 @media (min-width:761px) {
   .service-grid:not(:has(details[open])) {grid-auto-rows:1fr}
 }
@@ -76,7 +88,7 @@
 [data-theme="dark"] :is(.services,.field,.contact) {border-block:1px solid var(--edge)}
 [data-theme="dark"] footer {background:#0c1014}
 [data-theme="dark"] :is(.service,.service-help,.summer-home-routes,.btu-tool,.btu-method,form,.faq details,.report-stage,.catalogue-toolbar,.radio-options,.audience,.menu-toggle,.btu-grid form) {background:var(--surface);border-color:var(--line);color:var(--ink)}
-[data-theme="dark"] :is(.tags span,.service-top i,.audience>i,.btu-invitation>i,.btu-height-options span,.report-points i,.process>div>span) {background:var(--accent-surface);color:var(--teal);border-color:var(--line)}
+[data-theme="dark"] :is(.tags span,.service-top i,.audience>i,.btu-invitation>i,.btu-height-options span,.process>div>span) {background:var(--accent-surface);color:var(--teal);border-color:var(--line)}
 [data-theme="dark"] :is(.catalogue-toolbar p,.service-top span,.illustration-note,.btu-method p,.audience .audience-copy>span) {color:var(--muted)}
 [data-theme="dark"] :is(.audience .audience-copy>.audience-action,.text-link:hover,.btu-mode:hover,.service-top .icon) {color:var(--teal)}
 [data-theme="dark"] :is(.audience[aria-current],.btu-tool>summary:hover,.service-help>a.button:hover,.button.secondary:hover,.header nav a[aria-current]) {background:var(--accent-surface)}
