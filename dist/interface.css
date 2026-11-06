@@ -29,11 +29,14 @@
   .header-contact {padding:7px 9px}
   .menu-toggle {order:3;background:var(--surface)}
 }
-.service-grid {align-items:start}
+.service-grid {align-items:stretch}
 .service-grid .service {padding:0;overflow:hidden}
 .service-grid .service details {border:0}
-.service-grid .service summary {display:block;padding:clamp(19px,2vw,28px);text-align:left;color:var(--ink);font-weight:400}
+.service-grid .service summary {display:flex;flex-direction:column;align-items:stretch;padding:clamp(19px,2vw,28px);text-align:left;color:var(--ink);font-weight:400}
 .service-grid .service summary::after {content:none}
+.service-grid .service details:not([open]),
+.service-grid .service details:not([open]) summary {height:100%}
+.service-grid .equipment-intro {flex:1}
 .service-grid .service summary:focus-visible {outline-offset:-4px;border-radius:12px}
 .service:has(summary:hover),.service:has(details[open]) {border-color:var(--teal)}
 .equipment-name {display:block;font-size:22px;letter-spacing:-.04em;line-height:1.25}
@@ -52,16 +55,20 @@
 @media(prefers-reduced-motion:reduce) {.equipment-plus {transition:none}}
 :root[data-theme="dark"] {
   color-scheme:dark;
-  --surface:#172d38;
-  --inset:#10232d;
+  --surface:#223c48;
+  --inset:#0c1a23;
   --accent-surface:#21433f;
   --ink:#edf5f5;
   --muted:#b5c9cf;
-  --line:#415b65;
+  --line:#536e79;
   --teal:#91e4d1;
-  --pale:#112630;
+  --pale:#17303a;
 }
 [data-theme="dark"] body {background:var(--inset)}
+[data-theme="dark"] .services {background:var(--pale)}
+[data-theme="dark"] .field {background:#102e32}
+[data-theme="dark"] .contact {background:#18344a}
+[data-theme="dark"] :is(.services,.field,.contact) {border-block:1px solid var(--line)}
 [data-theme="dark"] footer {background:var(--surface)}
 [data-theme="dark"] :is(.service,.service-help,.summer-home-routes,.btu-tool,.btu-method,form,.faq details,.report-stage,.catalogue-toolbar,.radio-options,.audience,.menu-toggle,.btu-grid form) {background:var(--surface);border-color:var(--line);color:var(--ink)}
 [data-theme="dark"] :is(.tags span,.service-top i,.audience>i,.btu-invitation>i,.btu-height-options span,.report-points i,.process>div>span) {background:var(--accent-surface);color:var(--teal);border-color:var(--line)}

@@ -1,14 +1,8 @@
 (() => {
   const system = matchMedia('(prefers-color-scheme: dark)');
-  const key = 'siem-theme';
-  let choice;
   let button;
-  try {
-    choice = localStorage.getItem(key);
-  } catch {}
 
-  function applyTheme() {
-    const dark = choice === 'dark' || (choice !== 'light' && system.matches);
+  function applyTheme(dark) {
     document.documentElement.dataset.theme = dark ? 'dark' : 'light';
     if (button) {
       button.setAttribute('aria-pressed', String(dark));
@@ -16,18 +10,14 @@
     }
   }
 
-  applyTheme();
-  system.addEventListener('change', applyTheme);
+  applyTheme(system.matches);
+  system.addEventListener('change', event => applyTheme(event.matches));
   document.addEventListener('DOMContentLoaded', () => {
     button = document.querySelector('.theme-toggle');
     button.hidden = false;
-    applyTheme();
+    applyTheme(system.matches);
     button.addEventListener('click', () => {
-      choice = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-      applyTheme();
-      try {
-        localStorage.setItem(key, choice);
-      } catch {}
+      applyTheme(document.documentElement.dataset.theme !== 'dark');
     });
   });
 })();
