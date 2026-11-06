@@ -2,10 +2,11 @@
 <html lang="es-CL">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="theme.js"></script>
   <title>SIEM SPA · Climatización y refrigeración</title>
   <meta name="description" content="Instalación, mantención y soluciones de refrigeración de SIEM SPA. Cuéntanos qué equipo necesitas atender y consulta por WhatsApp.">
   <meta name="theme-color" content="#092b42">
-  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="ux.css"><link rel="stylesheet" href="btu.css"><link rel="stylesheet" href="gallery.css"><link rel="stylesheet" href="campaign.css"><script src="app.js" defer></script><script src="btu.js" defer></script><script src="gallery.js" defer></script><script src="campaign-config.js" defer></script><script src="campaign.js" defer></script>
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="ux.css"><link rel="stylesheet" href="btu.css"><link rel="stylesheet" href="gallery.css"><link rel="stylesheet" href="campaign.css"><link rel="stylesheet" href="interface.css"><script src="app.js" defer></script><script src="btu.js" defer></script><script src="gallery.js" defer></script><script src="campaign-config.js" defer></script><script src="campaign.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -14,6 +15,7 @@
   <a class="brand" href="#inicio" aria-label="SIEM SPA, inicio"><img src="assets/logo.png" width="540" height="199" alt="SIEM SPA · Servicios Integrales"></a>
   <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" aria-label="Abrir menú"><span></span><span></span></button>
   <nav id="navigation" aria-label="Navegación principal"><a href="#soluciones">Soluciones</a><a href="#servicios">Servicios</a><a href="#terreno">En terreno</a><a href="#respaldo">Nuestro respaldo</a></nav>
+  <button class="theme-toggle" hidden type="button" aria-label="Modo oscuro" aria-pressed="false" title="Modo oscuro"><svg aria-hidden="true" viewBox="0 0 24 24"><path class="moon" d="M20 14a8.5 8.5 0 0 1-10-10A8.5 8.5 0 1 0 20 14Z"/><g class="sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></g></svg></button>
   <a class="header-contact" href="#cotizar">Contacto <span aria-hidden="true">↗</span></a>
 </div></header>
 <main id="contenido">
@@ -38,11 +40,31 @@
 <div class="catalogue-toolbar" hidden><p id="catalogue-status" role="status"></p><button type="button" class="text-link" id="show-all">Ver todos los servicios <span aria-hidden="true">↗</span></button></div>
 <aside class="summer-home-routes" id="summer-home-routes" hidden aria-labelledby="summer-home-title"><h3 id="summer-home-title">¿Ya tienes aire acondicionado?</h3><p>Consulta por la mantención de tu equipo. Si estás pensando en instalar uno, la calculadora de BTU te da una primera orientación para tu habitación.</p><div class="actions"><a class="button secondary" href="#cotizar">Consultar mantención <span aria-hidden="true">↓</span></a><a class="text-link" href="#calculadora-btu">Voy a instalar: calcular BTU <span aria-hidden="true">↗</span></a></div></aside>
 <div class="service-grid" id="service-list">
-  <article class="service" data-service="Aire acondicionado"><div class="service-top"><i data-icon="ac"></i><span>01 / CLIMATIZACIÓN</span></div><h3>Aire acondicionado</h3><p>Confort térmico para tus espacios, con instalación y mantención de equipos.</p><div class="tags"><span>Instalación</span><span>Mantención</span></div></article>
-  <article class="service" data-service="Chillers"><div class="service-top"><i data-icon="chiller"></i><span>02 / ENFRIAMIENTO</span></div><h3>Chillers</h3><p>Atención de sistemas de agua helada para necesidades de climatización y procesos.</p><div class="tags"><span>Instalación</span><span>Mantención</span><span>Reparación</span></div></article>
-  <article class="service" data-service="Cámaras de frío"><div class="service-top"><i data-icon="cold"></i><span>03 / CONSERVACIÓN</span></div><h3>Cámaras de frío</h3><p>Fabricación y mantención de espacios refrigerados según las necesidades de tu proyecto.</p><div class="tags"><span>Fabricación</span><span>Mantención</span></div></article>
-  <article class="service" data-service="Equipos evaporativos"><div class="service-top"><i data-icon="fan"></i><span>04 / SISTEMAS EVAPORATIVOS</span></div><h3>Equipos evaporativos</h3><p>Instalación, mantención y reparación para atender las necesidades de tu equipo.</p><div class="tags"><span>Instalación</span><span>Mantención</span><span>Reparación</span></div></article>
-  <article class="service" data-service="Enfriadores de tableros"><div class="service-top"><i data-icon="panel"></i><span>05 / CONTROL TÉRMICO</span></div><h3>Enfriadores de tableros</h3><p>Atención de equipos de enfriamiento para tableros y gabinetes eléctricos.</p><div class="tags"><span>Instalación</span><span>Mantención</span><span>Reparación</span></div></article>
+  <article class="service" data-service="Aire acondicionado">
+    <details><summary><span class="service-top"><i data-icon="ac"></i><span>CLIMATIZACIÓN</span></span><strong class="equipment-name">Aire acondicionado</strong><span class="equipment-intro">Confort térmico para tus espacios, con instalación y mantención de equipos.</span><span class="tags"><span>Instalación</span><span>Mantención</span></span><span class="equipment-more"><span class="when-closed">Ver detalles</span><span class="when-open">Cerrar detalles</span><span aria-hidden="true" class="equipment-plus">+</span></span></summary>
+      <p class="equipment-detail">Un equipo split extrae calor de la habitación y lo libera al exterior. Para instalarlo interesa conocer el tamaño del ambiente y dónde se ubicarán las dos unidades. Para una mantención, indica el modelo y si has notado menos caudal de aire, goteo o ruido.</p>
+    </details>
+  </article>
+  <article class="service" data-service="Chillers">
+    <details><summary><span class="service-top"><i data-icon="chiller"></i><span>ENFRIAMIENTO</span></span><strong class="equipment-name">Chillers</strong><span class="equipment-intro">Atención de sistemas de agua helada para necesidades de climatización y procesos.</span><span class="tags"><span>Instalación</span><span>Mantención</span><span>Reparación</span></span><span class="equipment-more"><span class="when-closed">Ver detalles</span><span class="when-open">Cerrar detalles</span><span aria-hidden="true" class="equipment-plus">+</span></span></summary>
+      <p class="equipment-detail">Un chiller enfría agua que circula hacia equipos de climatización o procesos industriales. Si el sistema pierde capacidad, indica la temperatura de agua que necesitas y la que observas. El modelo del equipo y los códigos de alarma ayudan a orientar la consulta.</p>
+    </details>
+  </article>
+  <article class="service" data-service="Cámaras de frío">
+    <details><summary><span class="service-top"><i data-icon="cold"></i><span>CONSERVACIÓN</span></span><strong class="equipment-name">Cámaras de frío</strong><span class="equipment-intro">Fabricación y mantención de espacios refrigerados según las necesidades de tu proyecto.</span><span class="tags"><span>Fabricación</span><span>Mantención</span></span><span class="equipment-more"><span class="when-closed">Ver detalles</span><span class="when-open">Cerrar detalles</span><span aria-hidden="true" class="equipment-plus">+</span></span></summary>
+      <p class="equipment-detail">Una cámara de frío mantiene productos dentro de un recinto aislado. Para fabricarla, el punto de partida es qué guardarás, a qué temperatura y con qué frecuencia se abrirá la puerta. Si ya tienes una cámara, indica sus dimensiones y cómo varía la temperatura durante la jornada.</p>
+    </details>
+  </article>
+  <article class="service" data-service="Equipos evaporativos">
+    <details><summary><span class="service-top"><i data-icon="fan"></i><span>SISTEMAS EVAPORATIVOS</span></span><strong class="equipment-name">Equipos evaporativos</strong><span class="equipment-intro">Instalación, mantención y reparación para atender las necesidades de tu equipo.</span><span class="tags"><span>Instalación</span><span>Mantención</span><span>Reparación</span></span><span class="equipment-more"><span class="when-closed">Ver detalles</span><span class="when-open">Cerrar detalles</span><span aria-hidden="true" class="equipment-plus">+</span></span></summary>
+      <p class="equipment-detail">Estos equipos enfrían el aire al hacerlo pasar por un medio húmedo. El suministro de agua, la ventilación del recinto y la humedad del ambiente influyen en su funcionamiento. Para consultar, indica si el ventilador mueve aire y si notas cambios en el enfriamiento.</p>
+    </details>
+  </article>
+  <article class="service" data-service="Enfriadores de tableros">
+    <details><summary><span class="service-top"><i data-icon="panel"></i><span>CONTROL TÉRMICO</span></span><strong class="equipment-name">Enfriadores de tableros</strong><span class="equipment-intro">Atención de equipos de enfriamiento para tableros y gabinetes eléctricos.</span><span class="tags"><span>Instalación</span><span>Mantención</span><span>Reparación</span></span><span class="equipment-more"><span class="when-closed">Ver detalles</span><span class="when-open">Cerrar detalles</span><span aria-hidden="true" class="equipment-plus">+</span></span></summary>
+      <p class="equipment-detail">Un enfriador de tablero evacua el calor que generan los componentes eléctricos dentro del gabinete. Para orientar la atención, indica el modelo del enfriador, la temperatura que registra el tablero y si aparece alguna alarma durante la operación.</p>
+    </details>
+  </article>
 </div><aside class="service-help"><div><h3>¿Necesitas ayuda con uno de estos equipos?</h3><p>Si no sabes qué equipo tienes, también podemos orientarte.</p></div><a class="button secondary" href="#cotizar">Preparar mi consulta <span aria-hidden="true">↓</span></a></aside></div></section>
 
 
