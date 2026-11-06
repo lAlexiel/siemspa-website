@@ -224,4 +224,5 @@
         byId("btu-tool").querySelector(".btu-open-label").textContent = tool.open ? "Cerrar calculadora" : "Abrir calculadora BTU";
     });
     render();
+    form.hidden = false;
 })();

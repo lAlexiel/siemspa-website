@@ -190,6 +190,7 @@ form.addEventListener("submit", event => {
     animateChange(status);
 });
 
+form.hidden = false;
 form.addEventListener("input", () => {
     document.querySelector("#form-status").replaceChildren();
 });
@@ -220,6 +221,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener(
     if (!target) return;
     event.preventDefault();
     closeMenu();
+    if (target instanceof HTMLDetailsElement) target.open = true;
     target.setAttribute("tabindex", "-1");
     target.focus({
         preventScroll: true

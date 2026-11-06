@@ -101,3 +101,21 @@
 [data-theme="dark"] .report-paper {background:#e4e9e9}
 [data-theme="dark"] .report-paper {color:#153448;--muted:#526b78;--teal:#0f716d;--ink:#153448;--line:#c9d9da}
 html[data-theme="dark"][data-campaign="summer"] .audience-section>.eyebrow {color:#f5ce7a}
+.faq .questions {display:grid;gap:8px;min-width:0}
+@media (min-width:761px) {
+  .audience-copy {display:flex;flex-direction:column;align-self:stretch}
+  .audience .audience-copy>.audience-action {margin-top:auto;padding-top:17px}
+}
+.faq .questions details {border:1px solid var(--line);border-radius:12px;background:var(--inset)}
+.faq .questions summary {padding:17px 48px 17px 20px;font-size:16px;line-height:1.5}
+.faq .questions summary::after {right:18px;top:14px}
+.faq .questions details p {padding:0 20px 18px;margin:0;color:var(--muted)}
+.faq .questions details[open] {border-color:var(--teal)}
+.privacy-wrap {padding-bottom:25px}
+.privacy-wrap details {border-block:1px solid var(--line)}
+.privacy-wrap summary {max-width:72ch;min-height:44px}
+.privacy-copy {max-width:72ch;padding-bottom:20px}
+.privacy-copy h3 {font-size:17px;margin:18px 0 7px}
+.privacy-copy p {color:var(--muted);margin-bottom:10px}
+:is(.privacy,.privacy-copy,.btu-send-note) a {text-decoration:underline;text-underline-offset:3px}
+#quote-form[hidden] {display:none}
