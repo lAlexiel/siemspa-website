@@ -170,6 +170,7 @@ html[data-theme="dark"][data-campaign="summer"] .audience-section>.eyebrow {colo
 .faq .questions details p {padding:0 20px 18px;margin:0;color:var(--muted)}
 .faq .questions details[open] {border-color:var(--teal)}
 .footer-bottom {flex-wrap:wrap}
+.business-address {font-style:normal}
 .footer-legal {display:flex;flex-wrap:wrap;gap:0 1.25rem}
 .footer-legal a:hover,.footer-legal a:focus-visible {text-decoration:underline;text-underline-offset:3px}
 :is(.privacy,.btu-send-note) a {text-decoration:underline;text-underline-offset:3px}

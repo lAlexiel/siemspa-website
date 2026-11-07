@@ -16,7 +16,7 @@ window.SIEM_SUMMER_CAMPAIGN = {
         business: "Climatización y refrigeración con atención técnica durante el verano."
     },
     support: "Climatización con respaldo técnico.",
-    description: "Instalación y mantención de aire acondicionado para tu hogar. Climatización y refrigeración para tu empresa, con intervenciones documentadas.",
+    description: "Instalación y mantención de aire acondicionado para tu hogar. Climatización y refrigeración para empresas. Atención desde Renca, con intervenciones documentadas.",
     home: "Prepara tu aire acondicionado o encuentra orientación para instalar uno. Consulta disponibilidad.",
     calculatorLabel: "Calcular BTU para mi habitación"
 };
