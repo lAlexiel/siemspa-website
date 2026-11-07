@@ -7,6 +7,7 @@ const drawings = {
     home: '<path d="m3 11 9-8 9 8M5 10v11h14V10M9 21v-7h6v7"/>',
     ac: '<rect x="2" y="4" width="20" height="10" rx="2"/><path d="M5 11h14M17 7h2M7 17v3M12 17v5M17 17v3"/>',
     chiller: '<rect x="3" y="4" width="18" height="15" rx="1"/><circle cx="8" cy="10" r="3"/><circle cx="16" cy="10" r="3"/><path d="M6 16h12M6 19v3M18 19v3"/>',
+    uma: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="12" r="3"/><path d="M15 8h3M15 12h3M15 16h3M9 9v6M6 12h6"/>',
     cold: '<path d="M3 21V3h18v18zM9 3v18M6 11v3M15 7v10M12 9l6 6M12 15l6-6"/>',
     fan: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="2"/><path d="M11 10C5 6 13 3 14 7l-1 3M14 12c6-3 5 5 1 5l-2-3M11 14c-1 6-7 1-5-2l4-1"/>',
     panel: '<rect x="4" y="2" width="16" height="20" rx="1"/><path d="M8 6h8M8 9h5M8 18h8M8 15h8M17 11v2"/>',
@@ -65,6 +66,7 @@ equipment.addEventListener("input", () => {
 const scopes = {
     "Aire acondicionado": [ "Instalación", "Mantención" ],
     Chillers: [ "Instalación", "Mantención", "Reparación" ],
+    "Unidades manejadoras de aire (UMA)": [ "Instalación", "Mantención", "Reparación" ],
     "Cámaras de frío": [ "Fabricación", "Mantención" ],
     "Equipos evaporativos": [ "Instalación", "Mantención", "Reparación" ],
     "Enfriadores de tableros": [ "Instalación", "Mantención", "Reparación" ]
@@ -104,11 +106,11 @@ function renderCatalogue(context) {
     document.querySelectorAll("[data-audience]").forEach(link => {
         if (context === link.dataset.audience) link.setAttribute("aria-current", "true"); else link.removeAttribute("aria-current");
     });
-    document.querySelector("#services-eyebrow").textContent = context === "Hogar" ? "CLIMATIZACIÓN DEL HOGAR" : context === "Empresa" ? "SOLUCIONES PARA EMPRESAS" : "CINCO ESPECIALIDADES DE FRÍO";
+    document.querySelector("#services-eyebrow").textContent = context === "Hogar" ? "CLIMATIZACIÓN DEL HOGAR" : context === "Empresa" ? "SOLUCIONES PARA EMPRESAS" : "CLIMATIZACIÓN Y REFRIGERACIÓN";
     document.querySelector("#services-title").textContent = context === "Hogar" ? "Aire acondicionado para tu espacio." : "¿Qué equipo necesitas atender?";
     document.querySelector("#services-description").textContent = context === "Hogar" ? "Instalación y mantención. Consulta la atención disponible para tu vivienda y comuna." : "Conoce nuestras especialidades y el alcance de cada servicio.";
     document.querySelector(".catalogue-toolbar").hidden = false;
-    document.querySelector("#catalogue-status").textContent = context === "Hogar" ? "Hogar · 1 especialidad para consultar" : context === "Empresa" ? "Empresas · 5 especialidades disponibles para consultar" : `Mostrando los 5 servicios${audienceContext ? ". Tu consulta sigue dirigida a: " + audienceContext : ""}.`;
+    document.querySelector("#catalogue-status").textContent = context === "Hogar" ? "Hogar · 1 especialidad para consultar" : context === "Empresa" ? `Empresas · ${catalogueCards.length} especialidades disponibles para consultar` : `Mostrando los ${catalogueCards.length} servicios${audienceContext ? ". Tu consulta sigue dirigida a: " + audienceContext : ""}.`;
     scheduleNavigationUpdate();
 }
 

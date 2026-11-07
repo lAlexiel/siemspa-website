@@ -29,7 +29,24 @@
   .header-contact {padding:7px 9px}
   .menu-toggle {order:3;background:var(--surface)}
 }
-.service-grid {align-items:stretch}
+.service-grid {align-items:stretch;grid-template-columns:repeat(3,minmax(0,1fr))}
+.service-grid>.service:nth-child(n) {grid-column:auto}
+@media (max-width:1100px) {
+  .service-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:620px) {
+  .service-grid {grid-template-columns:minmax(0,1fr)}
+}
+.qualifications {border-top:1px solid var(--line)}
+.qualifications h2 {margin-bottom:1.5rem}
+.qualification-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.qualification-grid article {padding:clamp(22px,3vw,32px);border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.qualification-grid h3 {font-size:20px;line-height:1.35;letter-spacing:-.025em;margin:0 0 18px}
+.qualification-grid ul {padding-left:1.2em;margin:0;color:var(--muted)}
+.qualification-grid li+li {margin-top:12px}
+@media (max-width:620px) {
+  .qualification-grid {grid-template-columns:minmax(0,1fr)}
+}
 .report-points > div > i {
   align-self:flex-start;
   flex:none;
@@ -71,6 +88,9 @@
 .service-grid .service summary:focus-visible {outline-offset:-4px;border-radius:12px}
 .service:has(summary:hover),.service:has(details[open]) {border-color:var(--teal)}
 .equipment-name {display:block;font-size:22px;letter-spacing:-.04em;line-height:1.25}
+@media (min-width:621px) {
+  .equipment-name {min-block-size:2.5em}
+}
 .equipment-intro {display:block;margin-top:12px;color:var(--muted);font-size:15px;line-height:1.6}
 .service .tags {margin:17px 0}
 .equipment-more {display:flex;align-items:center;justify-content:space-between;min-height:32px;padding-top:12px;border-top:1px solid var(--line);font-size:14px;font-weight:600;color:var(--teal)}
