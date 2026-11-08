@@ -82,6 +82,11 @@
 .annual-plan h3 {margin:0;font-size:clamp(1.3rem,2.2vw,1.75rem);line-height:1.25;letter-spacing:-.03em}
 .annual-plan p {max-width:70ch;margin:0;color:var(--ink)}
 .annual-plan p+p {margin-top:.7em}
+.equipment-detail a, .annual-plan a, .service-help p a {color:var(--teal);text-decoration:underline;text-underline-offset:.2em}
+.home-view + .service-help .company-help {display:none}
+.equipment-detail a {display:table;margin-top:.65rem;padding-block:.25rem;font-weight:600}
+.annual-plan a {display:inline-block;margin-top:.65rem}
+.footer-main p a {text-decoration:underline;text-underline-offset:.2em}
 @media (max-width:760px) {
   .annual-plan {grid-template-columns:minmax(0,1fr);gap:.9rem}
 }

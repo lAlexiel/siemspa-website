@@ -16,7 +16,7 @@ window.SIEM_SUMMER_CAMPAIGN = {
         business: "Climatización y refrigeración con atención técnica durante el verano."
     },
     support: "Climatización con respaldo técnico.",
-    description: "Instalación y mantención de aire acondicionado para tu hogar. Climatización y refrigeración para empresas. Atención desde Renca, con intervenciones documentadas.",
+    description: "En SIEM SpA preparamos tu aire acondicionado para el calor y atendemos equipos de refrigeración industrial y comercial. Coordinamos las visitas desde Renca, Santiago de Chile.",
     home: "Prepara tu aire acondicionado o encuentra orientación para instalar uno. Consulta disponibilidad.",
     calculatorLabel: "Calcular BTU para mi habitación"
 };

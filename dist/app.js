@@ -82,6 +82,13 @@ function updateNeeds() {
 
 equipment.addEventListener("change", updateNeeds);
 
+const requestedEquipment = new URLSearchParams(location.search).get("equipo");
+if (!equipment.value && Object.hasOwn(scopes, requestedEquipment)) {
+    equipment.value = requestedEquipment;
+    equipmentTouched = true;
+    updateNeeds();
+}
+
 function updateAudience() {
     const home = form.elements.audience.value === "Hogar";
     audienceContext = form.elements.audience.value;
